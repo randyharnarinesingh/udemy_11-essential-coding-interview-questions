@@ -2,7 +2,7 @@ def view_field(field) :
     for row in field:
         print('   '.join(list(map(str, row))))
 
-def click(field,num_rows,num_cols,given_i,given_j) : # can speed up using dynamic programming to track visited spots using flags
+def click(field,num_rows,num_cols,given_i,given_j) :
     if field[given_i][given_j] != 0 :
         return field
     else :
@@ -10,7 +10,7 @@ def click(field,num_rows,num_cols,given_i,given_j) : # can speed up using dynami
         for i in [given_i-1,given_i,given_i+1] :
             for j in [given_j-1,given_j,given_j+1] :
                 if 0 <= i < num_rows and 0 <= j < num_cols :
-                    field = click(field,num_rows,num_cols,i,j)
+                    field = click(field,num_rows,num_cols,i,j) # recursive call for depth-first search of matrix
         return field
 
 '''field = [[0,0,0,0,0],[0,1,1,1,0],[0,1,-1,1,0]]
