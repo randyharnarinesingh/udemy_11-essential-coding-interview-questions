@@ -7,7 +7,7 @@ def is_rotation(A,B) :
 
     if B[j] == key : # something was matched, check for a further (n-1) matches
         for i in range(1,n) :
-            j = (j+1) % n
+            j = (j+1) % n # ensures index doesn't overflow and instead loops from end to beginning
             if A[i] != B[j] :
                 return False
         return True
