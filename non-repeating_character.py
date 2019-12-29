@@ -5,7 +5,6 @@ def non_repeating(string) :
             history[string[i]] += 1
         else :
             history[string[i]] = 1
-    result = ''
     for key in history.keys() :
         if history[key] == 1 :
             return key
